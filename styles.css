@@ -30,3 +30,277 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 @media(max-width:680px){.banner-inner{flex-direction:column;align-items:flex-start}}
 @media(max-width:390px){.banner-inner .button{max-width:100%;white-space:normal;text-align:center}}
+
+
+/* ========================================================================
+   Edition 02 · Typographic and responsive refinement
+   A quiet editorial hierarchy: generous reading text, restrained display
+   headings, accessible navigation and mobile-first legibility.
+   ======================================================================== */
+:root {
+  --width: 1152px;
+  --paper: #f8f8f4;
+  --pale: #edf0eb;
+  --line: #d7ded9;
+  --ink: #172c31;
+  --body: #3b5358;
+  --accent: #11776e;
+}
+html { font-size: 100%; }
+body {
+  font-size: 17px;
+  line-height: 1.74;
+  letter-spacing: -.008em;
+  text-rendering: optimizeLegibility;
+}
+p { overflow-wrap: break-word; }
+.shell { width: min(var(--width), calc(100% - 80px)); }
+.mobile-menu { display:none; }
+
+/* Navigation and metadata: no tiny type at desktop or mobile sizes */
+.nav { min-height: 82px; gap: 28px; }
+.brand { font-size: 21px; letter-spacing: -.045em; }
+.brand-mark { width: 39px; height:39px; font-size: 19px; }
+.nav-links { gap: clamp(19px, 2.1vw, 36px); }
+.nav-links a { font-size: 14.5px; line-height: 1.4; font-weight: 600; }
+.nav-contact { padding: 12px 17px; font-size: 14px; font-weight: 650; }
+.eyebrow, .section-index, .section-overline,
+.tiny-overline, .path-top, .postulate-meta,
+.research-detail-label, .record-meta, .archive-type,
+.book-number { font-size: 12.5px !important; letter-spacing: .105em; }
+.eyebrow { letter-spacing: .13em; }
+.eyebrow:before { width: 7px; height:7px; flex:none; }
+.section-overline { line-height: 1.45; margin-bottom: 34px; }
+.section-index { line-height: 1.65; }
+.diagram-label { font-size: 12px; letter-spacing: .045em; line-height: 1.45; }
+.hero-footnotes { font-size: 13px; letter-spacing: .015em; }
+.hero-footnotes span { padding-block: 19px; }
+
+/* Type scale: H1 / H2 / H3 / lead / body / label */
+.hero-content h1 {
+  font-size: clamp(5.6rem, 8.3vw, 8rem);
+  letter-spacing: -.069em;
+  line-height: 1.03;
+  margin-top: 24px;
+}
+.hero-lede {
+  font-size: clamp(1.48rem, 2.15vw, 1.82rem);
+  line-height: 1.48;
+  max-width: 570px;
+}
+.hero-quote { font-size: 17px; line-height:1.72; max-width: 560px; color:#c8ddd5; }
+.display-title {
+  font-size: clamp(2.6rem, 4.2vw, 4.35rem);
+  line-height: 1.135;
+  letter-spacing: -.047em;
+  margin-bottom: 26px;
+}
+.section-title, .section-title.compact {
+  font-size: clamp(2.7rem, 4.1vw, 4.5rem);
+  line-height: 1.15;
+  letter-spacing: -.043em;
+  margin-bottom: 34px;
+}
+.interior-hero h1 {
+  font-size: clamp(3.7rem, 6.1vw, 6.1rem);
+  line-height: 1.09;
+  letter-spacing: -.059em;
+}
+.interior-hero.writing-hero h1 {
+  font-size: clamp(3.45rem, 5.6vw, 5.85rem);
+}
+.interior-lede { font-size: clamp(1.3rem, 1.85vw, 1.65rem); line-height:1.55; }
+.large-copy { font-size: clamp(1.07rem, 1.42vw, 1.2rem); line-height:1.84; max-width: 710px; }
+.note-text { font-size: 16px; line-height: 1.72; max-width:700px; }
+.section { padding-block: clamp(78px, 7.3vw, 112px); }
+.editorial-head { grid-template-columns: 210px minmax(0,1fr); gap: 48px; }
+.inline-link, .text-link, .archive-more, .book a {
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 700;
+}
+.button { min-height: 49px; font-size: 15px; padding: 12px 19px; letter-spacing: 0; }
+
+/* Homepage composition */
+.hero-grid { min-height: 594px; padding-block: 76px 80px; gap:clamp(35px, 4.8vw, 75px); }
+.hero-quote { margin-block: 28px 32px; }
+.hero-content { min-width:0; }
+.diagram-frame { box-shadow: 0 24px 65px #071d2144; }
+.path-grid { gap: 24px; }
+.path-card { min-height: 405px; padding: 32px 34px; }
+.path-card h3 { font-size:clamp(2rem, 2.55vw, 2.65rem); line-height:1.19; }
+.path-card p { font-size: 17px; line-height:1.75; max-width:460px; }
+.path-symbol { width: 142px; height: 116px; margin-block: 10px 17px; }
+.callout-grid { gap: 68px; }
+.callout-grid h2 { font-size: clamp(2.6rem, 4vw, 4.25rem); line-height:1.15; }
+.callout-grid p { font-size: 18px; line-height:1.75; }
+
+/* Interiors */
+.interior-hero { padding-block: clamp(76px, 7.7vw, 104px); }
+.interior-grid { grid-template-columns: 1fr .78fr; }
+.postulates { gap:24px; }
+.postulate { padding: 36px; min-height: 303px; }
+.postulate h3 { font-size: clamp(1.9rem, 2.35vw, 2.55rem); line-height:1.22; }
+.postulate p, .research-detail p, .question-list p { font-size: 17px; line-height:1.75; }
+.research-detail { grid-template-columns: 210px 1fr; padding: 31px 36px; }
+.question-list h3 { font-size: 26px; line-height:1.3; }
+.question-list article { grid-template-columns: 60px 1fr; padding-block: 27px; }
+.question-list article span { font-size: 25px; }
+.banner-inner h2 { font-size: clamp(2.6rem, 3.8vw, 3.9rem); line-height:1.18; }
+.banner-inner p { font-size:17px; line-height:1.7; }
+.featured-record { padding: clamp(30px, 3.5vw, 48px); }
+.featured-record h2 { font-size: clamp(2.4rem, 3.7vw, 3.8rem); line-height:1.16; }
+.featured-record p { font-size:17px; line-height:1.75; }
+.record-id { font-size:15px; line-height:1.6; }
+.archives { gap:20px; }
+.archive { padding:32px; min-height:307px; }
+.archive h3 { font-size:clamp(1.95rem, 2.3vw, 2.45rem); line-height:1.22; }
+.archive p { font-size:16.5px; line-height:1.73; }
+.book { grid-template-columns: 142px minmax(0,1fr); min-height:346px; }
+.book-body { padding:29px 28px; }
+.book h3 { font-size:clamp(1.45rem, 2vw, 2rem); line-height:1.3; }
+.book-sub { font-size:17px; line-height:1.48; }
+.book p { font-size:16px; line-height:1.73; }
+.writing-note { font-size:16px; line-height:1.75; }
+.principles { gap:22px; }
+.principles article { padding:34px 30px; min-height: 258px; }
+.principles h3 { font-size:32px; line-height:1.22; }
+.principles p { font-size:17px; line-height:1.7; }
+.contact-grid h2 { font-size:clamp(2.5rem, 3.9vw, 4rem); line-height:1.17; }
+.contact-grid p { font-size:17.5px; line-height:1.78; }
+.contact-links a { font-size:15px; padding:12px 17px; }
+.footer-main { padding-block:52px 39px; }
+.footer-name { font-size:42px; }
+.footer-signature p { font-size:15px; line-height:1.7; }
+.footer-nav a { font-size:15px; }
+.footer-bottom { font-size:13px; line-height:1.7; }
+
+/* Tablet: hide the full nav in favour of a genuinely readable menu. */
+@media (max-width: 890px) {
+  .nav { min-height:74px; padding: 0; flex-wrap:nowrap; }
+  .nav-links, .nav-contact { display:none; }
+  .mobile-menu { display:block; margin-left:auto; position:relative; color:#e5f1e9; }
+  .mobile-menu summary {
+    list-style:none; display:flex; align-items:center; justify-content:space-between;
+    gap:18px; cursor:pointer; border:1px solid #6b938c; border-radius:4px;
+    padding:10px 14px; font-size:15px; font-weight:650; line-height:1.4;
+  }
+  .mobile-menu summary::-webkit-details-marker { display:none; }
+  .mobile-menu summary span { font-size:22px; line-height:.8; font-weight:400; transition: transform .15s ease; }
+  .mobile-menu[open] summary span { transform: rotate(45deg); }
+  .mobile-menu[open] > nav {
+    position:absolute; z-index:30; top:calc(100% + 15px); right:0;
+    width:min(300px, calc(100vw - 35px)); background:#16343a;
+    border:1px solid #4f7970; border-radius:5px;
+    box-shadow:0 18px 45px #07181965; padding:9px;
+  }
+  .mobile-menu nav a {
+    display:block; text-decoration:none; padding:10px 13px;
+    font-size:16px; line-height:1.5; color:#e0ede5;
+    border-radius:3px;
+  }
+  .mobile-menu nav a:hover,.mobile-menu nav a:focus-visible { background:#285158; color:#fff; }
+  .hero-grid { grid-template-columns:1fr .8fr; gap:25px; min-height:510px; padding-block:66px; }
+  .hero-content h1 { font-size:clamp(4.6rem, 9vw, 7rem); }
+  .hero-lede { font-size: clamp(1.3rem,2.8vw,1.7rem); }
+  .editorial-head { grid-template-columns:160px 1fr; gap:35px; }
+  .books { grid-template-columns:1fr; }
+  .archives { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .archives .archive:last-child { grid-column:span 2; }
+  .contact-grid { grid-template-columns:1fr; gap:20px; }
+}
+
+/* Phone typography: no running text below 16px, navigable controls >=44px. */
+@media (max-width: 680px) {
+  body { font-size:17px; line-height:1.72; }
+  .shell { width:calc(100% - 40px); }
+  .nav { min-height:71px; }
+  .brand { margin:0; font-size:20px; }
+  .brand-mark { width:36px; height:36px; }
+  .section { padding-block: 67px; }
+  .section-index { margin:0 0 19px; }
+  .editorial-head { display:block; }
+  .eyebrow, .section-index, .section-overline, .tiny-overline,
+  .path-top, .postulate-meta, .research-detail-label, .record-meta,
+  .archive-type,.book-number { font-size:12.5px !important; }
+  .hero-grid { display:flex; flex-direction:column; gap:38px; padding-block:62px 56px; }
+  .hero-content h1 { font-size: clamp(4.25rem, 15vw, 6.7rem); margin-block:20px 20px; }
+  .hero-lede { font-size: clamp(1.33rem, 5vw, 1.62rem); line-height:1.5; }
+  .hero-quote { font-size:16.5px; margin-block:24px 28px; }
+  .diagram { width:min(100%,440px); align-self:center; }
+  .diagram-label { font-size:11.5px; }
+  .hero-footnotes { grid-template-columns:1fr; font-size:13px; }
+  .hero-footnotes span { padding:13px 0; }
+  .display-title { font-size:clamp(2.4rem, 9.5vw, 3.75rem); line-height:1.14; margin-bottom:25px; }
+  .section-title,.section-title.compact { font-size:clamp(2.35rem, 8.8vw, 3.55rem); line-height:1.15; margin-bottom:27px; }
+  .large-copy { font-size:17px; line-height:1.78; }
+  .note-text { font-size:16px; }
+  .section-overline { margin-bottom:25px; }
+  .path-grid,.postulates,.archives,.principles { grid-template-columns:1fr; }
+  .archives .archive:last-child { grid-column:auto; }
+  .path-card { min-height:350px; padding:25px 25px 28px; }
+  .path-card h3 { font-size:32px; }
+  .path-card p { font-size:16.5px; }
+  .path-symbol { height:110px; width:128px; margin-block:2px 16px; }
+  .callout-grid { grid-template-columns:1fr; gap:16px; }
+  .callout-grid h2 { font-size:clamp(2.4rem, 8.5vw, 3.4rem); }
+  .callout-grid p { font-size:17px; }
+  .interior-hero { padding-block:67px 71px; }
+  .interior-grid { grid-template-columns:1fr; }
+  .interior-figure { display:none; }
+  .interior-hero h1, .interior-hero.writing-hero h1 { font-size:clamp(3rem, 10.2vw, 4.9rem); line-height:1.13; }
+  .interior-lede { font-size:clamp(1.25rem, 4.9vw, 1.5rem); line-height:1.55; }
+  .postulate { padding:26px 25px; min-height:252px; }
+  .postulate h3 { font-size:31px; margin:20px 0 15px; }
+  .postulate p, .research-detail p, .question-list p { font-size:16.5px; }
+  .research-detail { grid-template-columns:1fr; gap:9px; padding:24px; }
+  .question-list h3 { font-size:24px; }
+  .question-list article { grid-template-columns:43px 1fr; gap:11px; }
+  .banner-inner { flex-direction:column; align-items:flex-start; }
+  .banner-inner h2 { font-size:clamp(2.5rem, 9vw, 3.7rem); }
+  .featured-record { grid-template-columns:1fr; gap:23px; padding:26px; }
+  .featured-record h2 { font-size:clamp(2.2rem, 8.6vw, 3.45rem); }
+  .featured-record p { font-size:16.5px; }
+  .archive { padding:26px; min-height:260px; }
+  .archive h3 { font-size:34px; }
+  .archive p { font-size:16.5px; }
+  .book { grid-template-columns:112px minmax(0,1fr); min-height:0; }
+  .book-art svg { width:76px; }
+  .book-body { padding:25px 22px; }
+  .book h3 { font-size:26px; }
+  .book p { font-size:16px; }
+  .principles article { min-height:0; padding:27px; }
+  .principles h3 { font-size:30px; }
+  .principles p { font-size:16.5px; }
+  .contact-grid h2 { font-size:clamp(2.4rem, 9vw, 3.55rem); }
+  .contact-grid p { font-size:17px; }
+  .contact-links a { font-size:15px; min-height:45px; }
+  .footer-main { padding-block:43px 28px; }
+  .footer-name { font-size:36px; }
+  .footer-signature p,.footer-nav a { font-size:15px; }
+  .footer-bottom { padding-block:18px 26px; font-size:13px; }
+}
+
+@media (max-width: 390px) {
+  .shell { width:calc(100% - 36px); }
+  .hero-content h1 { font-size:clamp(3.85rem, 16.5vw, 4.6rem); }
+  .interior-hero h1, .interior-hero.writing-hero h1 { font-size:clamp(2.65rem, 10.5vw, 3.2rem); }
+  .section-title,.section-title.compact { font-size:clamp(2.15rem, 9vw, 2.65rem); }
+  .display-title { font-size:clamp(2.25rem, 9.5vw, 2.95rem); }
+  .book { grid-template-columns:1fr; }
+  .book-art { min-height:110px; }
+  .book-art svg { height:85px; width:90px; }
+  .book-body { padding:25px; }
+  .book h3 { font-size:27px; }
+  .book p { font-size:16px; }
+  .diagram-label { padding:11px; font-size:11px; }
+  .section-overline { font-size:12px!important; }
+}
+
+@media print {
+  .mobile-menu, .nav-contact { display:none!important; }
+  a { text-decoration:underline; }
+  .section { break-inside:avoid; }
+}
+
+@media(max-width:890px){.mobile-menu nav a[aria-current=page]{color:#fff;background:#285158;font-weight:750}}
