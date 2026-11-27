@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{description}}">
+  <meta name="theme-color" content="#101f32">
+  <meta property="og:type" content="{{type}}">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <link rel="icon" type="image/svg+xml" href="{{prefix}}assets/favicon.svg">
+  <link rel="stylesheet" href="{{prefix}}styles.css">
+  <title>{{title}}</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap masthead">
+      <div class="identity">
+        <a class="wordmark" href="{{prefix}}index.html" aria-label="Gauss-K home">Gauss-<i>K</i></a>
+        <span class="discipline">Theoretical physics</span>
+      </div>
+      <nav class="site-nav desktop-nav" aria-label="Main navigation">{{navigation}}</nav>
+      <a class="header-contact text-link" href="{{prefix}}about.html#contact">Contact <span class="arrow" aria-hidden="true"></span></a>
+      <details class="mobile-menu">
+        <summary>Menu <span class="menu-icon" aria-hidden="true"></span></summary>
+        <nav class="site-nav" aria-label="Mobile navigation">
+          {{navigation}}
+          <a href="{{prefix}}about.html#contact">Contact</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+{{content}}
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <a class="wordmark" href="{{prefix}}index.html" aria-label="Gauss-K home">Gauss-<i>K</i></a>
+          <p class="footer-motto">Exploration · Explanation · Enlightenment</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">{{navigation}}</nav>
+      </div>
+      <div class="footer-base">
+        <span>© 2026 Gauss-K</span>
+        <a href="{{prefix}}about.html#contact">Correspondence <span class="arrow" aria-hidden="true"></span></a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (() => {
+      const menu = document.querySelector('.mobile-menu');
+      const toggle = menu.querySelector('summary');
+      document.addEventListener('click', (event) => {
+        if (menu.open && (!menu.contains(event.target) || event.target.closest('a'))) menu.open = false;
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && menu.open) {
+          menu.open = false;
+          toggle.focus();
+        }
+      });
+      window.addEventListener('hashchange', () => { menu.open = false; });
+      window.addEventListener('pageshow', () => { menu.open = false; });
+    })();
+  </script>
+</body>
+</html>

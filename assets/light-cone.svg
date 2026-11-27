@@ -1,0 +1,39 @@
+<svg aria-labelledby="cone-title cone-desc" role="img" viewBox="0 0 560 570" xmlns="http://www.w3.org/2000/svg">
+<title id="cone-title">Causal light cone</title>
+<desc id="cone-desc">A stylized geometric representation of past and future light cones, with one shared causal structure.</desc>
+<defs>
+<lineargradient id="cone-top" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#9fd4c6" stop-opacity=".22"></stop><stop offset="100%" stop-color="#9fd4c6" stop-opacity=".012"></stop></lineargradient>
+<lineargradient id="cone-bottom" x1="0" x2="1" y1="1" y2="0"><stop offset="0%" stop-color="#94cfc3" stop-opacity=".24"></stop><stop offset="100%" stop-color="#94cfc3" stop-opacity=".01"></stop></lineargradient>
+<pattern height="40" id="grid" patternunits="userSpaceOnUse" width="40"><path d="M40 0H0V40" fill="none" stroke="#9dcdc2" stroke-opacity=".1" stroke-width="1"></path></pattern>
+<radialgradient id="halo"><stop offset="0" stop-color="#84cabe" stop-opacity=".14"></stop><stop offset="1" stop-color="#84cabe" stop-opacity="0"></stop></radialgradient>
+</defs>
+<rect fill="url(#grid)" height="570" width="560"></rect>
+<circle cx="280" cy="277" fill="url(#halo)" r="234"></circle>
+<g stroke="#a0c5be" stroke-opacity=".24" stroke-width="1">
+<path d="M280 46V518" stroke-dasharray="4 9"></path>
+<path d="M51 277H508" stroke-dasharray="4 9"></path>
+<path d="M77 119L484 435" stroke-opacity=".13"></path>
+<path d="M484 119L77 435" stroke-opacity=".13"></path>
+<circle cx="280" cy="277" fill="none" r="169" stroke-opacity=".12"></circle>
+</g>
+<g>
+<path d="M280 277L109 134Q280 41 451 134Z" fill="url(#cone-top)"></path>
+<path d="M280 277L109 421Q280 511 451 421Z" fill="url(#cone-bottom)"></path>
+<path d="M109 134L280 277L451 134" fill="none" stroke="#b4e4d6" stroke-opacity=".85" stroke-width="1.65"></path>
+<path d="M109 421L280 277L451 421" fill="none" stroke="#b4e4d6" stroke-opacity=".8" stroke-width="1.65"></path>
+<ellipse cx="280" cy="134" fill="none" rx="171" ry="48" stroke="#9bd1c4" stroke-opacity=".68" stroke-width="1.5"></ellipse>
+<ellipse cx="280" cy="421" fill="none" rx="171" ry="48" stroke="#9bd1c4" stroke-opacity=".68" stroke-width="1.5"></ellipse>
+<path d="M109 134Q280 182 451 134" fill="none" stroke="#9bd1c4" stroke-dasharray="4 7" stroke-opacity=".48"></path>
+<path d="M109 421Q280 469 451 421" fill="none" stroke="#9bd1c4" stroke-dasharray="4 7" stroke-opacity=".48"></path>
+<path d="M280 277V78M280 277V483" stroke="#c9f1e5" stroke-dasharray="3 8" stroke-opacity=".47"></path>
+<circle cx="280" cy="277" fill="#f2d5a6" r="5"></circle>
+<circle cx="280" cy="277" fill="none" r="13" stroke="#e6bc85" stroke-opacity=".35"></circle>
+</g>
+<g fill="#9dc8bf" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" letter-spacing="2">
+<text x="292" y="65">+t</text>
+<text x="292" y="510">−t</text>
+<text x="465" y="272">x</text>
+<text x="282" y="311">O</text>
+</g>
+<g stroke="#bce1d6" stroke-opacity=".5" stroke-width="1.1"><path d="M280 76l-4 10h8z" fill="#bce1d6"></path></g>
+</svg>
